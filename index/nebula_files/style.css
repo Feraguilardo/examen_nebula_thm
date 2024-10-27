@@ -1,0 +1,70 @@
+
+.app-box .app-box-inner {
+    padding:10px;
+}
+
+button {
+    margin-left:5px;margin-top:5px;
+}
+
+#url {
+    width:500px;line-height:30px;float:left;font-family:Arial, sans-serif;color:#000;font-size:12px;background-color: #FFF;margin-left:300px;margin-top:5px;border-radius: 10px;text-align:center;
+}
+
+#url img {
+    position: absolute;margin-left:-25px;margin-top:3px;
+}
+
+
+.app-box .app-box-inner .app-header {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 30px;
+    background-color: #bbc7d1;
+    line-height: 30px;
+}
+
+.app-box .app-box-inner .app-header strong {
+    display:inline;
+    padding-left:10px;
+    color: #848484;
+}
+
+.app-box .app-box-inner .app-header div.buttons {
+    float:left;
+}
+
+.app-box .app-box-inner .app-header div.buttons span {
+    margin-left:10px;
+    margin-top:10px;
+    display: block;
+    float:left;
+    height:16px;
+    width:16px;
+    border-radius: 360px;
+    background-color: #b32b2b;
+}
+
+.app-box .app-box-inner .app-header div.buttons span:nth-child(2) {
+    background-color: #589724;
+}
+
+.app-box .app-box-inner .app-header div.buttons span:nth-child(3) {
+    background-color: #e0bc3b;
+}
+
+.app-box .app-box-inner .app-body {
+    border-left: 1px solid rgb(0 0 0 / 12%);
+    border-bottom: 1px solid rgb(0 0 0 / 12%);
+    border-right: 1px solid rgb(0 0 0 / 12%);
+    padding:30px;
+    font-family: Arial, sans-serif
+}
+
+@media screen and (max-width: 870px) {
+    button {
+        display: none;
+    }
+}
+

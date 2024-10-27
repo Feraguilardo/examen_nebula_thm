@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu");
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #212c42;
+  min-height: 100vh;
+  color: #ececec;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.thm-bg-dark {
+  background-color: #212c42;
+}
+
+.thm-bg-nuetral {
+  background-color: #151c2b;
+}
+
+.thm-text-success {
+  color: #a3ea2a;
+}
+
+.wrapper {
+  min-height: 95vh;
+  border-radius: 10px;
+}
+
+.offical-header {
+  background-color: #151c2b;
+  border-bottom: 0.1px solid #ececec7a;
+  padding: 1rem 0;
+}
+
+.font-heading {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 500;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.btn-container {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-container button,
+.btn-container input[type="submit"] {
+  cursor: pointer;
+  background-color: #525a6a;
+  width: 50%;
+  margin: auto;
+  padding: 0.5rem 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  border-radius: 10px;
+  font-weight: 400;
+  border: none;
+  color: #ececec;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+}
+
+.btn-container button:hover,
+.btn-container input[type="submit"]:hover {
+  background-color: #212c42;
+  border: 1px solid #ececec;
+}
+
+.btn-container button:active,
+.btn-container input[type="submit"]:active {
+  outline: none;
+}
+
+.btn-container-2 {
+  text-align: center;
+  -webkit-transform: skew(33deg, -28deg);
+          transform: skew(33deg, -28deg);
+  width: 100%;
+}
+
+.btn-container-2 button,
+.btn-container-2 input[type="submit"] {
+  cursor: pointer;
+  background-color: #525a6a;
+  min-width: 120px;
+  padding: 2px 8px;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  border-radius: 4px;
+  font-weight: 400;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", "Ubuntu", sans-serif !important;
+  white-space: nowrap;
+}
+
+.btn-container-2 button:hover,
+.btn-container-2 input[type="submit"]:hover {
+  background-color: #212c42;
+  outline: 1px solid #ececec;
+  border: none;
+}
+
+.btn-container-2 button:active,
+.btn-container-2 input[type="submit"]:active {
+  border: none;
+}
+
+@media screen and (max-width: 750px) {
+  .btn-container button,
+  .btn-container input[type="submit"] {
+    width: 100%;
+  }
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%,
+  to {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 100%;
+  }
+  90%,
+  to {
+    width: 0;
+  }
+}
+
+.typing-slider {
+  position: relative;
+}
+
+.typing-slider li {
+  -webkit-animation: slide 4s;
+          animation: slide 4s;
+}
+
+.typing-slider li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212c42;
+  -webkit-animation: typing 4s, cursor 4s;
+          animation: typing 4s, cursor 4s;
+}
+
+.popup-offical {
+  z-index: 1000;
+}
+
+.popup-offical .popup-offical-container {
+  background-color: #151c2b;
+}
+
+.tooltip-content-2,
+.tooltip-content-3 {
+  display: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  white-space: nowrap;
+  padding: 0.4rem 0.5rem !important;
+}
+
+.tooltip-2:hover .tooltip-content-2,
+.tooltip-3:hover .tooltip-content-3 {
+  display: block;
+}
+
+.tooltip-content {
+  display: none;
+  padding: 0.4rem 0.5rem !important;
+}
+
+.tooltip:hover + .tooltip-content {
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+code {
+  background: #a3ea2a;
+  color: #151c2b;
+  padding: 0 8px;
+  border-radius: 8px;
+  white-space: break-spaces;
+}
+/*# sourceMappingURL=style.css.map */
