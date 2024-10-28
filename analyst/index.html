@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Análista de Seguridad Junior (Associate)</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./analyst_files/style.css">
+    <script type="text/javascript" src="./analyst_files/script.js"></script>
+    <link rel="stylesheet" href="./analyst_files/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+    <script type="text/javascript" src="./analyst_files/loader.js"></script>
+    <script type="text/javascript">
+       google.charts.load('current', {'packages':['corechart','bar']});
+       google.charts.setOnLoadCallback(drawCharts);
+
+       const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+       const getDay = (num) => {
+         if ([1, 21, 31].includes(num)) return `${num}`; 
+         if ([2, 22].includes(num)) return `${num}`; 
+         if ([3, 23].includes(num)) return `${num}`;
+
+         return `${num}`;
+       }
+
+       const getFormattedDate = (mins = 60) => {
+        const date = new Date(new Date().getTime() - (mins * 60 * 1000));
+        const fullDate = date.toLocaleDateString()
+        const fullTime = date.toLocaleTimeString()
+
+        const dateSplit = fullDate.split("/");
+        const month = months[parseInt(dateSplit[1])];
+        const day = getDay(dateSplit[0]);
+        const year = dateSplit[2];
+
+        const hours = (date.getHours() % 12).toString().padStart(2, "0");
+        const minutes = (date.getMinutes()).toString().padStart(2, "0");
+        const seconds = ((mins + parseInt(Math.random() * 100)) % 60).toString().padStart(2, "0");
+        const ms = (mins + parseInt(Math.random() * 100) % 999).toString().padStart(3, "0");
+
+        return `${month} ${day} ${year}, ${hours}:${minutes}:${seconds}:${ms}`;
+       }
+
+       const dates = [getFormattedDate(), getFormattedDate(63), getFormattedDate(200), getFormattedDate(200), getFormattedDate(210)];
+    </script><script type="text/javascript" charset="UTF-8" src="./analyst_files/loader(1).js"></script>
+<link id="load-css-0" rel="stylesheet" type="text/css" href="./analyst_files/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="./analyst_files/util.css"><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_graphics_module.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_corechart_module.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_fw_module.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/dygraph-tickers-combined.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/webfont.js"></script><script type="text/javascript" charset="UTF-8" src="./analyst_files/jsapi_compiled_bar_module.js"></script></head>
+<body>
+
+<div class="progress-bar">
+  <div style="display: flex;height: 100%;align-items: center;padding-left: 20px;">
+    <div style="font-size: 35px;margin-right:10px"><i class="fas fa-shield-alt"></i></div>
+    <div>
+      <div class="progress-bar-title">Análista de Seguridad Junior (Associate)</div>
+      <div class="progress-bar-dots">
+        <div id="progress-1"></div>
+        <div id="progress-2"></div>
+        <div id="progress-3"></div>
+        <div id="progress-4"></div>
+        <div id="progress-5"></div>
+        <div id="progress-6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+
+  <div id="level1">
+    <div class="introductions">
+      <div class="instructions-header" style="text-align: center">Instrucciones</div>
+      <div class="instructions-body" style="text-align: center">
+        Inspecciona las alertas en el panel de tu SIEM.
+      </div>
+    </div>
+    <div class="browser">
+      <div class="browser-header">
+        <div class="browser-buttons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="browser-address-bar">https://siem.internal</div>
+      </div>
+      <div class="browser-body">
+        <div class="charts">
+          <div class="pie_area">
+            <div id="piechart"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 300px; height: 250px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;" aria-label="A chart."><svg width="300" height="250" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><filter id="_ABSTRACT_RENDERER_ID_3"><fegaussianblur in="SourceAlpha" stdDeviation="2"></fegaussianblur><feoffset dx="1" dy="1"></feoffset><fecomponenttransfer><fefunca type="linear" slope="0.1"></fefunca></fecomponenttransfer><femerge><femergenode></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs><rect x="0" y="0" width="300" height="250" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="58" y="221.5" width="185" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g column-id="Operations: Information"><rect x="58" y="222" width="119" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="72" y="230.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">Operations: Information</text></g><circle cx="63" cy="227" r="5" stroke="none" stroke-width="0" fill="#3366cc"></circle></g><path d="M211,232L211,222L201,227Z" stroke="none" stroke-width="0" fill="#cccccc"></path><g><text text-anchor="middle" x="222" y="230.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#0011cc">1/3</text></g><path d="M233,222L243,227L233,232Z" stroke="none" stroke-width="0" fill="#0011cc"></path></g><g><path d="M151,126L151,49A77,77,0,0,1,196.25946442652042,188.29430856687094L151,126A0,0,0,0,0,151,126" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="194.18655709603365" y="112.2186400246826" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">40%</text></g><g><path d="M151,126L77.76864824527318,149.794308566871A77,77,0,0,1,151,49L151,126A0,0,0,0,0,151,126" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="95.7388714192771" y="96.61586522058592" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M151,126L196.25946442652042,188.29430856687094A77,77,0,0,1,77.76864824527318,149.794308566871L151,126A0,0,0,0,0,151,126" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="122.86707951017684" y="185.30739087243663" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Type</th><th>Percentage</th></tr></thead><tbody><tr><td>Operations: Information</td><td>40</td></tr><tr><td>Security: Attack</td><td>30</td></tr><tr><td>Security: Suspicious</td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 260px; left: 310px; white-space: nowrap; font-family: Arial; font-size: 10px;">Security: Attack</div><div></div></div></div>
+          </div>
+          <div class="table_area">
+            <div id="chart"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 374px; height: 200px;"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;" aria-label="A chart."><svg width="374" height="200" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_1"><clippath id="_ABSTRACT_RENDERER_ID_2"><rect x="65" y="38" width="244" height="124"></rect></clippath></defs><rect x="0" y="0" width="374" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="65" y="22.5" font-family="Arial" font-size="10" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">Countries</text><rect x="65" y="14" width="244" height="10" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><rect x="65" y="38" width="244" height="124" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://static-labs.tryhackme.cloud/sites/beginner-defensivesec/#_ABSTRACT_RENDERER_ID_2)"><g><rect x="65" y="161" width="244" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="65" y="100" width="244" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="65" y="38" width="244" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="65" y="130" width="244" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="65" y="69" width="244" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="73" y="88" width="25" height="73" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="114" y="125" width="25" height="36" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="154" y="136" width="25" height="25" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="195" y="157" width="25" height="4" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="235" y="144" width="25" height="17" stroke="none" stroke-width="0" fill="#3366cc"></rect><rect x="276" y="141" width="25" height="20" stroke="none" stroke-width="0" fill="#3366cc"></rect></g><g><rect x="65" y="161" width="244" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="85.75" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">UK</text></g><g><text text-anchor="middle" x="126.25" y="189.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">US</text></g><g><text text-anchor="middle" x="166.75" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">Brazil</text></g><g><text text-anchor="middle" x="207.25" y="189.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">China</text></g><g><text text-anchor="middle" x="247.75" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">Russia</text></g><g><text text-anchor="middle" x="288.25" y="189.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#222222">N. Korea</text></g><g><text text-anchor="end" x="55" y="165" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="55" y="103.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">50</text></g><g><text text-anchor="end" x="55" y="42" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">100</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Country</th><th>Count</th></tr></thead><tbody><tr><td>UK</td><td>60</td></tr><tr><td>US</td><td>30</td></tr><tr><td>Brazil</td><td>21</td></tr><tr><td>China</td><td>4</td></tr><tr><td>Russia</td><td>15</td></tr><tr><td>N. Korea</td><td>17</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 210px; left: 384px; white-space: nowrap; font-family: Arial; font-size: 10px; font-weight: bold;">Countries</div><div></div></div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-heading">Alert Log</div>
+          <div class="panel-body">
+            <table class="event-log highlight" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                <th style="width:160px">Date</th>
+                <th>Mensaje</th>
+              </tr>
+              <tr>
+                <td id="dt-0">28 de noviembre de 2024, 08:22:06:113</td>
+                <td>Intento de autenticación SSH exitoso en el puerto 22 desde la dirección IP 143.110.250.149</td>
+              </tr>
+              <tr class="ip_clicked">
+                <td id="dt-1">28 de noviembre de 2024, 08:19:09:148</td>
+                <td>Intento de conexión no autorizado detectado desde la dirección IP 143.110.250.149 al puerto 22</td>
+              </tr>
+              <tr>
+                <td id="dt-2">28 de noviembre de 2024, 06:02:26:225</td>
+                <td>El usuario John Doe inició sesión con éxito (ID de evento 4624)</td>
+              </tr>
+              <tr>
+                <td id="dt-3">28 de noviembre de 2024, 06:02:44:218</td>
+                <td>Varios intentos fallidos de inicio de sesión por parte de John Doe</td>
+              </tr>
+              <tr>
+                <td id="dt-4">28 de noviembre de 2024, 05:52:57:307</td>
+                <td>Error de inicio de sesión: la contraseña de la cuenta especificada ha expirado (ID de evento 535)</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="level2" style="display: none">
+    <div class="browser">
+      <div class="browser-header">
+        <div class="browser-buttons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="browser-address-bar">https://ip-scanner.com</div>
+      </div>
+      <div class="browser-body" style="text-align: center">
+        <div><img src="./analyst_files/ipscanner-logo.png" height="80"></div>
+        <h2>IP-SCANNER.COM</h2>
+        <div>Escanea una dirección IP</div><br>
+        <div>
+          <input class="thm_input" id="search_ip_input" placeholder="Enter IP Address"> <button class="thm_button search_ip">Escanear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="level3" style="display: none">
+    <div class="introductions">
+      <div class="instructions-header" style="text-align: center">¿Sabías qué…?</div>
+      <div class="instructions-body">
+        <div>
+          <p>Existen muchas bases de datos de código abierto, como <a href="https://www.abuseipdb.com/" target="_blank">AbuseIPDB</a> y <a href="https://www.talosintelligence.com/" target="_blank">Cisco Talos Intelligence</a>, donde puedes realizar una verificación de reputación y ubicación de la dirección IP.</p> 
+          <p>La mayoría de los analistas de seguridad utilizan estas herramientas para ayudarles en la investigación de alertas.</p> 
+          <p>También puedes contribuir a hacer de Internet un lugar más seguro reportando direcciones IP maliciosas, por ejemplo, en AbuseIPDB.</p>
+        </div>
+      </div>
+    </div>
+    <div class="browser">
+      <div class="browser-header">
+        <div class="browser-buttons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="browser-address-bar">https://ip-scanner.com/search</div>
+      </div>
+      <div class="browser-body" style="text-align: center">
+        <div><img src="./analyst_files/ipscanner-logo.png" height="80"></div>
+        <h2>IP-SCANNER.COM</h2>
+        <div class="ip-results">
+          <div class="ip_found"><strong>143.110.250.149</strong> ha sido encontrada en nuestra BBDD!</div>
+          <div>La confianza de que la dirección IP es maliciosa es del 100%.</div>
+          <div class="warning-header">Maliciosa</div>
+          <div style="margin-top: 15px;">
+            <table class="ip">
+              <tbody><tr>
+                <td>ISP</td>
+                <td>China Mobile Communications Corporation</td>
+              </tr>
+              <tr>
+                <td>Domain Name</td>
+                <td>chinamobileltd.thm</td>
+              </tr>
+              <tr>
+                <td>País</td>
+                <td>China</td>
+              </tr>
+              <tr>
+                <td>Ciudad</td>
+                <td>Zhenjiang, Jiangsu</td>
+              </tr>
+            </tbody></table>
+          </div>
+        <br>
+        <div style="margin-top:10px">
+          <button class="thm_button escalate">Siguiente</button></div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="level4" style="display: none">
+    <div class="introductions">
+      <div class="instructions-body">
+        <div style="text-align: center;margin-top:15px;font-weight: bold">
+          ¿A quién elegirías para escalar este evento?
+        </div>
+
+        <div class="staff_holder">
+          <div class="staff_member">
+            <div><input type="radio" name="staff_member" value="1"></div>
+            <div>Joan Ribas</div>
+            <div class="staff_pic" style="background-image: url(&#39;images/person_1.png&#39;)"></div>
+            <div class="staff_position"><strong>Ejecutivo de ventas</strong></div>
+          </div>
+
+          <div class="staff_member">
+            <div><input type="radio" name="staff_member" value="2"></div>
+            <div>Nadia Watson</div>
+            <div class="staff_pic" style="background-image: url(&#39;images/person_2.png&#39;);background-position: 50% 0px;"></div>
+            <div class="staff_position"><strong>Consultora de Seguridad</strong></div>
+          </div>
+
+          <div class="staff_member">
+            <div><input type="radio" name="staff_member" value="3"></div>
+            <div>Caroline Stone</div>
+            <div class="staff_pic" style="background-image: url(&#39;images/person_3.png&#39;)"></div>
+            <div class="staff_position"><strong>Arquitecta de Seguridad</strong></div>
+          </div>
+
+
+          <div class="staff_member">
+            <div><input type="radio" id="correct_staff" name="staff_member" value="4"></div>
+            <div>Will Griffin</div>
+            <div class="staff_pic" style="background-image: url(&#39;images/person_4.png&#39;)"></div>
+            <div class="staff_position"><strong>Líder del Equipo SOC</strong></div>
+          </div>
+
+
+        </div>
+
+        <div style="text-align:center"><button class="thm_button staff_chosen">Elige a un niembro del equipo</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="level5" style="display: none">
+    
+    <div class="browser">
+      <div class="browser-header">
+        <div class="browser-buttons">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="browser-address-bar">https://firewall.internal</div>
+      </div>
+      <div class="browser-body" style="text-align: center">
+        <div><img src="./analyst_files/firewall.png"></div>
+        <div><h2>Firewall Block List</h2></div>
+        <div class="panel" style="width:500px;text-align:left;margin:auto auto 20px auto;">
+          <div class="panel-heading">LISTA NEGRA</div>
+          <div class="panel-body">
+            <table class="event-log" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                <th style="width:160px">Fecha</th>
+                <th>Dirección IP</th>
+              </tr>
+              <tr>
+                <td>Julio 2 2024, 13:27:00:948</td>
+                <td>101.34.37.231</td>
+              </tr>
+              <tr>
+                <td>Junio 30 2024, 09:12:11:857</td>
+                <td>212.38.99.12</td>
+              </tr>
+              <tr>
+                <td>Junio 23 2024, 23:56:28:370</td>
+                <td>213.106.84.35</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+        <input class="thm_input" id="ip_blocked_input"> <button class="thm_button ip_blocked">Bloquear IP</button>
+      </div>
+    </div>
+  </div>
+  <div id="level6" style="display: none">
+    <div class="introductions">
+      <div class="instructions-header" style="text-align: center">Bien resuelto</div>
+      <div class="instructions-body" style="text-align: center">
+        <br>
+        <div>¡Has bloqueado la IP!</div>
+        <div><h2 id="flag"></h2></div>
+        <div><button class="thm_button"><a href="./threat_management/" style="text-decoration: none; color: white;">Siguiente</a></button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  setup();
+  dates.forEach((dt, i) => document.getElementById(`dt-${i}`).innerHTML = dt);
+</script>
+
+<deepl-input-controller><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller></body></html>
